@@ -1,1 +1,93 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Supermarket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="data.js"></script>
+</head>
+<body class="container">
+    <header class="jumbotron">
+        <h1>Shopping Cart</h1>
+    </header>
+</section>
+<section class="row-fluid">
+    <section class="btn-group">
+        <!-- <button class="btn btn-primary" onclick="loadDataGrid()">Load</button> -->
+        <button class="btn btn-secondary" onclick="displaySum()">Sum Total</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Choose Product
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Products on cart </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-control" id="idInput">
+                            <label for="idInput">Product ID</label>
+                            <option>001</option>
+                            <option>002</option>
+                            <option>003</option>
+                            <option>004</option>
+                            <option>005</option>
+                            </select>
+                            <select class="form-control" id="nameInput">
+                            <option>bench</option>
+                            <option>chair</option>
+                            <option>couch</option>
+                            <option>pillow</option>
+                            </select>
+                            <select class="form-control" id="scoreInput">
+                            <option>29.99</option>
+                            <option>9.99</option>
+                            <option>50.0</option>
+                            <option>5.0</option>
+                            </select>
 
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-secondary" >Close</button> -->
+                    <section class="row-fluid">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"onclick="saveChanges()">Save changes </button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+  
+</section>
+<section class="row-fluid">
+    <section id="dataList" class="border">
+        <div class="row">
+            <div class="col-md">
+                <b>Id</b>
+            </div>
+            <div class="col-md">
+                <b>Name</b>
+            </div>
+            <div class="col-md">
+                <b>Price</b>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="row-fluid">
+    <section id="resultSection" class="alert alert-info">
+        
+    </section>
+</section>
+<pre id="jsonData">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</html>       
