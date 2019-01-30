@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="data.js"></script>
+    <script src="json.js"></script>
 </head>
 <body class="container">
     <header class="jumbotron">
@@ -18,7 +19,7 @@
     <section class="btn-group">
         <!-- <button class="btn btn-primary" onclick="loadDataGrid()">Load</button> -->
         <button class="btn btn-secondary" onclick="displaySum()">Sum Total</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" class="btn btn-primary" data-toggle="modal" onclick="lista()" data-target="#exampleModalCenter">
             Choose Product
           </button>
           
@@ -28,36 +29,24 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalCenterTitle">Products on cart </h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Clear()">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                    <select class="form-control" id="idInput">
-                            <label for="idInput">Product ID</label>
-                            <option>001</option>
-                            <option>002</option>
-                            <option>003</option>
-                            <option>004</option>
-                            <option>005</option>
-                            </select>
+                        <label for="idInput">Product ID</label>
+                        <select class="form-control" id="idInput" onchange="price()">
+                            
+                           
+                        </select>
                             <select class="form-control" id="nameInput">
-                            <option>bench</option>
-                            <option>chair</option>
-                            <option>couch</option>
-                            <option>pillow</option>
+                            <option id='precio'>  </option>a
                             </select>
-                            <select class="form-control" id="scoreInput">
-                            <option>29.99</option>
-                            <option>9.99</option>
-                            <option>50.0</option>
-                            <option>5.0</option>
-                            </select>
-
+                            <input type="text" placeholder="Amount" id='scoreInput'>
                 <div class="modal-footer">
                   <!-- <button type="button" class="btn btn-secondary" >Close</button> -->
                     <section class="row-fluid">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal"onclick="saveChanges()">Save changes </button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveChanges();Clear()" ></button>Save changes </button>
                 </div>
               </div>
             </div>
@@ -83,6 +72,7 @@
 <section class="row-fluid">
     <section id="resultSection" class="alert alert-info">
         
+    <p  id="total"></p>
     </section>
 </section>
 <pre id="jsonData">

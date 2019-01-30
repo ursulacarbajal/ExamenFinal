@@ -1,23 +1,13 @@
-var students = [
-{"id":"001", "name":"bed","score":225.0},
-{"id":"002", "name":"bench","score":29.99},
-{"id":"003", "name":"chair","score":9.99},
-{"id":"004", "name":"couch","score":50.0},
-{"id":"005", "name":"pillow","score":5.0}
-];
+var students = [];
+
+var shoppingCart = [];
 
 
-// function calculateSum(){
-
-//     var sum = 0;
-//     var sum = document.getElementById("[scoreIn.selectedIndex] .value");
-//     return sum;
-// }
 
 function calculateSum(){
 
     var sum = 0;
-    students.forEach(student => {
+    shoppingCart.forEach(student => {
         sum = sum + student.score;
         console.log(student);
     });
@@ -26,12 +16,11 @@ function calculateSum(){
     return sum;
 }
 
-
-
 function loadDataGrid(){
 
     var i = 0;
     let dataList = document.getElementById("dataList");
+    // let shoppingCart = document.getElementById("shoppingCart");
     
          
         // console.log(students[i]);
@@ -44,20 +33,26 @@ function loadDataGrid(){
 
 function displaySum()
 {
-    var resultSection = document.getElementById("resultSection");
-    var paragraph = document.createElement("p");
-    paragraph.classList.add("badge"); // 2) Bootstrap classes
-    paragraph.classList.add("badge-info");
+    // var resultSection = document.getElementById("resultSection");
+    // var paragraph = document.createElement("p");
+    // paragraph.classList.add("badge"); // 2) Bootstrap classes
+    // paragraph.classList.add("badge-info");
 
-    paragraph.innerText = "Sum: " + calculateSum();
+    total.innerText = "Sum: " + calculateSum();
 
-    resultSection.appendChild(paragraph);
+    // resultSection.append(paragraph);
 
 }
+
+var IndexCont = 0;
+
 function saveChanges(){
+
+    IndexCont += 1
 
     var i = 0;
         let dataList = document.getElementById("dataList");
+       // let shoppingCart = document.getElementById("shoppingCart");
 
         if (i < students.length)
 
@@ -66,41 +61,40 @@ function saveChanges(){
 
         var id = document.createElement("div");
         id.classList.add("col-sm");
-        var  idIn = document.getElementById ("idInput");
-        id.innerText =  idIn.options [idIn.selectedIndex] .value;
+        // var  idIn = document.getElementById ("idInput");
+        id.innerText =  IndexCont;
         
         var name = document.createElement("div");
         name.classList.add("col-sm");
-        var  nameIn = document.getElementById ("nameInput");
+        var  nameIn = document.getElementById ("idInput");
         name.innerText =  nameIn.options [nameIn.selectedIndex] .value;
 
         var score = document.createElement("div");
         score.classList.add("col-sm");
-        var  scoreIn = document.getElementById ("scoreInput");
+        var  scoreIn = document.getElementById("nameInput");
         score.innerText =  scoreIn.options [scoreIn.selectedIndex] .value;
 
 
-
-        students.push({
-            id: idInput,
+        var total = parseInt(score.innerText) * parseInt(scoreInput.value)
+ 
+        shoppingCart.push({
+            id: IndexCont,
             name: name.innerText,
-            score: parseInt(score.innerText)
+            score: total
         });
-    // console.log(students)
+    
     
     dataList.appendChild(listItem);
 
     listItem.appendChild(id);
     listItem.appendChild(name);
     listItem.appendChild(score);
+
+    //shoppingCart.appendChild(listPrice);
+    // shoppingCart.push(listPrice);
+    // listPrice.appendChild(score);
     
-    // var jsonData = document.getElementById("jsonData");
-    //     jsonData.innerHTML =("<h3>JSON</h3>");
-    //     jsonData.innerHTML +=("<pre class='alert alert-secondary'>"); //Bootstrap class
-    //     jsonData.innerHTML +=(JSON.stringify(students, undefined, 2));
-    //     jsonData.innerHTML +=("</pre>");
-    //     jsonData.innerHTML +=("<br/>");
-    // }
+
 
 function refreshScores(){
     let dataList = document.getElementById("dataList");
@@ -109,5 +103,41 @@ function refreshScores(){
         dataList.removeChild(dataList.lastChild);
     }
     loadDataGrid();
+   
 }
+}
+
+
+function lista(){
+    var idIn = document.getElementById ("idInput");
+    var cont = 0;
+
+    students.forEach(element => {
+        var a = document.createElement('option')
+        a.id = cont;
+        a.innerText = element.name
+        idIn.append(a)
+
+        cont += 1
+
+    });
+
+}
+
+function price(){
+
+    var index = idInput.selectedIndex;
+
+    precio.innerText = students[index].price
+
+}
+
+
+function Clear(){
+
+    idInput.options.length = 0;
+    precio.innerText = "";
+    scoreInput.value = "";
+    
+ 
 }

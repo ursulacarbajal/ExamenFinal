@@ -1,5 +1,6 @@
 body {
     font-family: Verdana;
+    
 }
 
 .highlight {
@@ -11,5 +12,10 @@ body {
 }
 
 .border{
-    border-color: blue
+    border-color: blue;
+}
+
+.modal-body {
+    background-color: lightskyblue;
+
 }
