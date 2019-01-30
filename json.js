@@ -1,7 +1,7 @@
 const URL = "https://products-catalog-8e792.firebaseio.com/set-1.json";
 
 fetchData();
-
+ 
 function fetchData(){
  
   var request = new XMLHttpRequest();

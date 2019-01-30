@@ -106,7 +106,7 @@ function refreshScores(){
    
 }
 }
-
+ 
 
 function lista(){
     var idIn = document.getElementById ("idInput");
@@ -138,6 +138,6 @@ function Clear(){
     idInput.options.length = 0;
     precio.innerText = "";
     scoreInput.value = "";
-    
+   
  
 }

@@ -1,12 +1,12 @@
 body {
     font-family: Verdana;
-    
+
 }
 
 .highlight {
     background-color: blue;
 }
-
+ 
 .lowScore {
     color: red;
 }
